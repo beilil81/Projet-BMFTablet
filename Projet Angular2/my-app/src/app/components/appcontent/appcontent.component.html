@@ -1,0 +1,72 @@
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+
+       <menu-categorie></menu-categorie>
+       <!--<app-filter></app-filter>-->
+
+    <div class="col-md-9">
+
+      <div class="row carousel-holder">
+
+            <div class="col-md-12">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                <div class="carousel-inner bandeau">
+                  <div class="item active">
+                    <img class="slide-image" src="assets/img/image.png" alt="">
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+
+      </div>
+
+      <div class="row">
+        <div class="panel" role="search">
+          <div class="form-group">
+            <input #listFilter (keyup)="0" class="form-control" placeholder="Search">
+          </div>
+      </div>
+        
+        <label>Tablette en stock  : {{sizeListProduits}} </label>
+                <div *ngFor="let p of produits | filterByPrix:listFilter.value"> 
+                          <div class="col-sm-4 col-lg-4 col-md-4">
+                              <div class="thumbnail">
+                                <img src="assets/img/{{p.photo}}" alt="">
+                                <div class="caption">
+                                  
+                                  <h4><a href="#">{{p.designation}}</a>
+                                  </h4>
+                                  <h5> prix:{{p.prix}} €</h5>
+                                </div>
+                                <div class="ratings">
+                                 
+                                <!--<p > <button class="btn btn-warning"><span class="glyphicon  glyphicon-shopping-cart">
+                                  </span> <a (click)="addPanier(produitSelectionne)">Ajouter</a></button> </p>-->
+            
+                                  <p class="pull-right btn_detail">
+                                   <a [routerLink]="['/detailproduit', p.idProduit]" class="btn btn-default">
+                                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Détail</a>
+                                
+                                  </p>
+
+                         
+                                </div>
+                              </div>
+                        </div>
+                </div>
+        
+     </div>
+
+  </div>
+</div>
+
+  
+ 

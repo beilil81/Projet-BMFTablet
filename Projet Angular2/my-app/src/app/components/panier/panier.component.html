@@ -1,0 +1,43 @@
+<menu-categorie></menu-categorie>
+
+<div class="col-sm-5 col-lg-5 col-md-5">
+ <table *ngIf="panier.lignes" class="table table-bordered">
+	
+  	<thead class="bg-info">
+		<tr>
+		<th>Nom Produit</th>
+		<th>Prix</th>
+		<th>Quantité</th>
+		<th>Photo du produit</th>
+		<th>Action</th>
+
+		</tr>
+  </thead>
+  <tbody>
+	  
+		<tr *ngFor="let li of panier.lignes">
+			<td>{{li.produit.designation}}</td>
+			<td class="prix">{{li.produit.prix}} €</td>
+			<td class="qte">{{li.qt}}</td>	
+			<td><img  src="assets/img/{{li.produit.photo}}" alt=""/></td>
+			<td> <button (click)="suppProduit(li)"  class="btn btn-outline-warning glyphicon glyphicon-trash"></button></td>
+		</tr>
+
+  </tbody>
+
+</table>
+</div>
+  <div class="col-sm-3 col-lg-3 col-md-3 liste-article">
+		<div class="panel-heading">Total d'articles : {{quantite}}</div>
+		<div class="panel-heading">Total de la commande : {{panier.total}} €</div>
+		<div class="panel-body">
+			<button class="btn btn-outline-warning btnBG" (click)="viderPanier()">Vider le panier</button>
+			
+			<button class="btn btn-outline-warning pull-right btnBG" (click)="passerCommande()">Acheter</button>
+
+		</div>
+ </div>
+
+
+
+

@@ -1,0 +1,60 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <a class="navbar-brand" routerLink="/">BOUTIQUE BMF TABLET</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <ul class="nav navbar-nav">
+
+                    <li>
+                        <a routerLink="/" class="page-scroll">Accueil</a>
+                    </li>
+
+                    <li>
+                        <a routerLink="contact" class="page-scroll">Contact</a>
+                    </li>
+                    
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" [hidden]=" clientOk == true">
+
+                 <li>
+                    <a routerLink="inscription" class="page-scroll">Inscription</a>
+                </li>  
+
+                <li>
+                    <a routerLink="connexion" class="page-scroll"><span class="glyphicon glyphicon-log-in"></span> Connexion </a>
+                </li>
+
+               
+                <li class="panier">
+                    <a routerLink="panier" class="page-scroll"><img src="assets/img/panier.jpg" alt=""/> {{quantite}}</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" [hidden]=" clientOk == false">
+                <li>
+                    <a routerLink="commande" class="page-scroll">Commande</a>
+                </li>
+                <li>
+                    <a *ngIf="client" [hidden]="clientOk == false" class="page-scroll" routerLink="#">{{clientOk.nomClient}}</a>
+                </li>
+                <li>
+                    <a [hidden]=" clientOk == false" class="page-scroll" (click)="deconnecterClient()" routerLink="deconnexion">Déconnexion </a>
+                </li>
+                <li class="panier">
+                    <a routerLink="panier" class="page-scroll"><img src="assets/img/panier.jpg" alt=""/> {{quantite}}</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

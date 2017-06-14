@@ -1,0 +1,7 @@
+
+<div class="col-md-3">
+      <p class="lead">Les Catégories</p>
+    
+      <div class="list-group"  >
+        <a *ngFor="let c of categories" routerLink="/"  class="list-group-item" (click)="selectProduits(c)" >{{c.nomCategorie}}</a>
+</div>

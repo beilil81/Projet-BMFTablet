@@ -1,0 +1,4 @@
+/*pour avoir le curseur en forme de main sur le menu categorie*/
+.list-group-item{
+    cursor: pointer;
+}

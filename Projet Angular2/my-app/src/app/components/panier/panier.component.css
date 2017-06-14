@@ -1,0 +1,17 @@
+.liste-article{
+      border: 1px solid #ddd;
+}
+
+td img{
+    height: 120px;
+    width: 120px;
+}
+.btnBG{
+    background: #d9edf7;
+}
+.prix{
+    width:55px;
+}
+.qte{
+   width:30px;
+}

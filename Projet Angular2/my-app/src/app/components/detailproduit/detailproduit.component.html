@@ -1,0 +1,57 @@
+<menu-categorie></menu-categorie>
+
+<div class="row">
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div *ngIf="produitSelectionne" class="thumbnail">
+        <img src="assets/img/{{produitSelectionne.photo}}" alt="" />
+
+    </div>
+</div>
+
+  <div class="col-sm-4 col-lg-4 col-md-4">
+    <div *ngIf="produitSelectionne" class="thumbnail">
+      <div class="caption">
+        <h4 class="pull-right">Prix :{{produitSelectionne.prix}} €</h4>
+        <h4><a href="#">{{produitSelectionne.designation}}</a>
+        </h4>
+        <p> {{produitSelectionne.description}}</p>
+      </div>
+      <div class="ratings">
+       <p class="pull-right btnAjouter"> <button class="btn btn-warning"><span class="glyphicon  glyphicon-shopping-cart"></span> <a (click)="addPanier(produitSelectionne)">Ajouter</a></button> </p>
+        <p>
+          <span class="glyphicon">  </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--<menu-categorie></menu-categorie>
+
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div *ngIf="produitSelectionne" class="thumbnail">
+        <img src="assets/img/{{produitSelectionne.photo}}" alt="" />
+
+    </div>
+</div>
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <div class="caption">
+            <h4 class="pull-right">{{produitSelectionne.prix}} €</h4>
+            <h4><a href="#">{{produitSelectionne.designation}}</a>
+            </h4>
+            <p>{{produitSelectionne.description}}</p>
+            
+        </div>
+        <div class="ratings">
+                <p class="pull-right"><a (click)="addPanier(produitSelectionne)">Ajouter</a></p>
+                 <!--<p class="pull-right"> <button class="btn btn-warning"><span class="glyphicon  glyphicon-shopping-cart"></span> <a (click)="addPanier(produitSelectionne)">Ajouter</a></button> </p>-->
+<!--
+            </div>
+
+    </div>
+</div>-->-->
